@@ -17,7 +17,7 @@ def should_purchase(last_price, current_price):
 	
 def get_purchase_quantity(last_price, price, scale_factor=100):
 	price_drop = last_price - price
-	return round(price_drop / price * scale_factor)
+	return int(price_drop / price * scale_factor)
 	
 def purchase(quantity, price, purchase_record):
 	return purchase_record + [{ PURCHASE_QUANTITY_KEY: quantity, PURCHASE_PRICE_KEY: price }]
